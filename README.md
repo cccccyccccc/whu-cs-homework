@@ -1,7 +1,5 @@
 # whu-cs-homework
 
-武汉大学计算机学院专业课一体化平台自动写作业 Skill。
-
 ## 功能
 
 - 自动操作 Chrome 浏览器，登录 WHU CS 平台
