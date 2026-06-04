@@ -26,7 +26,7 @@ npm install --prefix ~/.claude/skills/browser ws
 ## 前置条件
 
 1. 安装 Chrome 浏览器
-2. 手动登录一次 https://cslabcg.whu.edu.cn/，让浏览器缓存 CAS 认证 session
+2. 手动登录一次 [cslabcg.whu.edu.cn](https://cslabcg.whu.edu.cn/)，让浏览器缓存 CAS 认证 session
 
 ## 支持的作业类型
 
