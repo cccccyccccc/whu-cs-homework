@@ -1,6 +1,6 @@
 # whu-cs-homework
 
-武汉大学计算机学院专业课一体化平台 (cslabcg.whu.edu.cn) 自动写作业 Skill。
+武汉大学计算机学院专业课一体化平台自动写作业 Skill。
 
 ## 功能
 
@@ -26,7 +26,7 @@ npm install --prefix ~/.claude/skills/browser ws
 ## 前置条件
 
 1. 安装 Chrome 浏览器
-2. 手动登录一次 [cslabcg.whu.edu.cn](https://cslabcg.whu.edu.cn/)，让浏览器缓存 CAS 认证 session
+2. 手动登录一次 WHU CS 平台，让浏览器缓存 CAS 认证 session
 
 ## 支持的作业类型
 
