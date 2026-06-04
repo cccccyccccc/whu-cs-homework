@@ -146,7 +146,13 @@ node "../browser/scripts/start.cjs" --profile
 node "../browser/scripts/nav.cjs" "https://cslabcg.whu.edu.cn/"
 node "../browser/scripts/eval.cjs" "document.title"
 ```
-If the page shows the course list, the session is active. If redirected to CAS login, the user needs to manually log in.
+If the page shows the course list, the session is active and you can proceed directly to Step 3.
+
+If the page shows an empty title or the login page (not the course list), the cached session has expired. Trigger the CAS unified auth flow:
+```bash
+node "../browser/scripts/eval.cjs" 'document.querySelector("a#cgstuloginbtn").click()'
+```
+This redirects to `cas.whu.edu.cn`. If the CAS session is also cached, it auto-redirects back to the course platform. Otherwise, tell the user they need to manually complete the CAS login (enter credentials and captcha) — the skill cannot handle credentials.
 
 ### Step 3: Discover available courses and assignments
 ALWAYS inspect the page before acting. Ask the user which course and which assignment they want to work on rather than guessing.
