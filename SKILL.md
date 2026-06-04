@@ -12,12 +12,12 @@ Automates completing and submitting homework on the Wuhan University Computer Sc
 Before first use, install the WebSocket dependency:
 
 ```bash
-npm install --prefix "C:/Users/21023/.claude/skills/browser" ws
+npm install --prefix ~/.claude/skills/browser ws
 ```
 
 All browser scripts are at:
 ```
-C:/Users/21023/.claude/skills/browser/scripts/
+~/.claude/skills/browser/scripts/
 ```
 
 Available scripts:
@@ -32,7 +32,7 @@ The platform uses WHU CAS (Central Authentication Service) for login. The user M
 
 **To start a session:**
 ```bash
-node "C:/Users/21023/.claude/skills/browser/scripts/start.cjs" --profile
+node "~/.claude/skills/browser/scripts/start.cjs" --profile
 ```
 The `--profile` flag uses a persistent Chrome profile at `~/.chrome-debug-profile`, which preserves cookies and session tokens across restarts.
 
@@ -138,13 +138,13 @@ TCP的拥塞控制包括以下几个阶段：<br><br>1. 慢启动阶段：cwnd�
 
 ### Step 1: Ensure Chrome is running
 ```bash
-node "C:/Users/21023/.claude/skills/browser/scripts/start.cjs" --profile
+node "~/.claude/skills/browser/scripts/start.cjs" --profile
 ```
 
 ### Step 2: Navigate to platform and verify session
 ```bash
-node "C:/Users/21023/.claude/skills/browser/scripts/nav.cjs" "https://cslabcg.whu.edu.cn/"
-node "C:/Users/21023/.claude/skills/browser/scripts/eval.cjs" "document.title"
+node "~/.claude/skills/browser/scripts/nav.cjs" "https://cslabcg.whu.edu.cn/"
+node "~/.claude/skills/browser/scripts/eval.cjs" "document.title"
 ```
 If the page shows the course list, the session is active. If redirected to CAS login, the user needs to manually log in.
 
@@ -153,7 +153,7 @@ ALWAYS inspect the page before acting. Ask the user which course and which assig
 
 To get the course list:
 ```bash
-node "C:/Users/21023/.claude/skills/browser/scripts/eval.cjs" '(()=>{const links=document.querySelectorAll("a");return Array.from(links).filter(l=>l.href.includes("courseID")).map(l=>({text:l.textContent.trim(),courseID:new URLSearchParams(l.href.split("?")[1]).get("courseID")}));})()'
+node "~/.claude/skills/browser/scripts/eval.cjs" '(()=>{const links=document.querySelectorAll("a");return Array.from(links).filter(l=>l.href.includes("courseID")).map(l=>({text:l.textContent.trim(),courseID:new URLSearchParams(l.href.split("?")[1]).get("courseID")}));})()'
 ```
 
 ### Step 4: Navigate to the specified course and homework
@@ -187,7 +187,7 @@ After submission, check the results. For programming problems:
 ## Common Errors & Fixes
 
 **"Error: Cannot find module 'ws'"**
-→ Run `npm install --prefix "C:/Users/21023/.claude/skills/browser" ws`
+→ Run `npm install --prefix ~/.claude/skills/browser ws`
 
 **Navigation returns empty error**
 → Chrome was closed. Restart with `start.cjs --profile`
